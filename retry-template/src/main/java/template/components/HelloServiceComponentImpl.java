@@ -2,14 +2,11 @@ package template.components;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.retry.RetryCallback;
 import org.springframework.retry.RetryContext;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Service;
 import template.MyException;
-
-import javax.annotation.PostConstruct;
 
 @Service
 public class HelloServiceComponentImpl implements HelloService {
@@ -33,6 +30,9 @@ public class HelloServiceComponentImpl implements HelloService {
         System.out.println("------------ retry  sayHelloInner -------------");
         System.out.println("-------------------------------------------------------------------------------------------");
         throw new MyException("this is exception");
+
+        // in RuntimeException retry doesn't happen
+        //throw new RuntimeException();
     }
 
 }

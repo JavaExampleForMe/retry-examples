@@ -1,4 +1,4 @@
-package template.components;
+package template;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +7,10 @@ import org.springframework.retry.RetryCallback;
 import org.springframework.retry.RetryContext;
 import org.springframework.retry.listener.RetryListenerSupport;
 import org.springframework.retry.support.RetryTemplate;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
 @Slf4j
-@Service
 public class DefaultListenerSupport extends RetryListenerSupport {
     @Autowired
     ApplicationContext applicationContext;
