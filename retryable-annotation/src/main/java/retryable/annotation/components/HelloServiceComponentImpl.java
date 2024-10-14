@@ -45,7 +45,7 @@ public class HelloServiceComponentImpl implements HelloService {
 //    }
 //
 
-    @Retryable(value = {MyException.class},
+    @Retryable(retryFor = {MyException.class},
             maxAttemptsExpression = "${demo.maxAttempts}",
             backoff = @Backoff(delayExpression = "${demo.retry.delay}")
     )
